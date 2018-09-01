@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="MvcFrameForPorjectSqlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+  <EntityContainer Name="MvcFrameForPorjectSqlModelStoreContainer">
+    <EntitySet Name="UsersDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.UsersDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserClassDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.UserClassDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResourceDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.ResourceDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InformationDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.InformationDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CommentDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.CommentDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InformationTypeDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.InformationTypeDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResourceTypeDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.ResourceTypeDbSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConfigDbSet" EntityType="MvcFrameForPorjectSqlModel.Store.ConfigDbSet" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="UsersDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Username" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Passwd" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+    <Property Name="ClassId" Nullable="false" Type="int" />
+    <Property Name="UserPower" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="UserClassDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="ClassName" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+  </EntityType>
+  <EntityType Name="ResourceDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="InformationId" Nullable="false" Type="int" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+    <Property Name="ResourceName" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="ResourcePath" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="TypeId" Nullable="false" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="InformationDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+    <Property Name="Title" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Details" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="UserId" Nullable="false" Type="int" />
+    <Property Name="TypeId" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="CommentDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="InformationId" Nullable="false" Type="int" />
+    <Property Name="UserId" Nullable="false" Type="int" />
+    <Property Name="Grade" Nullable="false" Type="int" />
+    <Property Name="Details" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+  </EntityType>
+  <EntityType Name="InformationTypeDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="TypeName" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Status" Nullable="false" Type="int" />
+    <Property Name="TypePower" Nullable="false" Type="int" />
+  </EntityType>
+  <EntityType Name="ResourceTypeDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="TypeName" Nullable="false" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="ConfigDbSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="Name" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="Values" Nullable="false" Type="nvarchar(max)" />
+    <Property Name="CreateTime" Nullable="false" Type="datetime" />
+    <Property Name="ModifyTime" Nullable="false" Type="datetime" />
+    <Property Name="IsDeleted" Nullable="false" Type="bit" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="MvcFrameForPorjectSqlModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="MvcFrameForPorjectSqlModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="UsersDbSet" EntityType="MvcFrameForPorjectSqlModel.UsersDb" />
+          <EntitySet Name="UserClassDbSet" EntityType="MvcFrameForPorjectSqlModel.UserClassDb" />
+          <EntitySet Name="ResourceDbSet" EntityType="MvcFrameForPorjectSqlModel.ResourceDb" />
+          <EntitySet Name="InformationDbSet" EntityType="MvcFrameForPorjectSqlModel.InformationDb" />
+          <EntitySet Name="CommentDbSet" EntityType="MvcFrameForPorjectSqlModel.CommentDb" />
+          <EntitySet Name="InformationTypeDbSet" EntityType="MvcFrameForPorjectSqlModel.InformationTypeDb" />
+          <EntitySet Name="ResourceTypeDbSet" EntityType="MvcFrameForPorjectSqlModel.ResourceTypeDb" />
+          <EntitySet Name="ConfigDbSet" EntityType="MvcFrameForPorjectSqlModel.ConfigDb" />
+        </EntityContainer>
+        <EntityType Name="UsersDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Passwd" Type="String" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="UserPower" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserClassDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ClassName" Type="String" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResourceDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InformationId" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ResourceName" Type="String" Nullable="false" />
+          <Property Name="ResourcePath" Type="String" Nullable="false" />
+          <Property Name="TypeId" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InformationDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="Title" Type="String" Nullable="false" />
+          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="TypeId" Type="Int32" Nullable="false" />
+          </EntityType>
+        <EntityType Name="CommentDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InformationId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Grade" Type="Int32" Nullable="false" />
+          <Property Name="Details" Type="String" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InformationTypeDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="TypeName" Type="String" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="TypePower" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResourceTypeDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="TypeName" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ConfigDb">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Values" Type="String" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="ModifyTime" Type="DateTime" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MvcFrameForPorjectSqlModelStoreContainer" CdmEntityContainer="MvcFrameForPorjectSqlModelContainer">
+    <EntitySetMapping Name="UsersDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.UsersDb)">
+        <MappingFragment StoreEntitySet="UsersDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Passwd" ColumnName="Passwd" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="UserPower" ColumnName="UserPower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserClassDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.UserClassDb)">
+        <MappingFragment StoreEntitySet="UserClassDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourceDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.ResourceDb)">
+        <MappingFragment StoreEntitySet="ResourceDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InformationId" ColumnName="InformationId" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ResourceName" ColumnName="ResourceName" />
+          <ScalarProperty Name="ResourcePath" ColumnName="ResourcePath" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformationDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.InformationDb)">
+        <MappingFragment StoreEntitySet="InformationDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CommentDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.CommentDb)">
+        <MappingFragment StoreEntitySet="CommentDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InformationId" ColumnName="InformationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Details" ColumnName="Details" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InformationTypeDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.InformationTypeDb)">
+        <MappingFragment StoreEntitySet="InformationTypeDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="TypePower" ColumnName="TypePower" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResourceTypeDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.ResourceTypeDb)">
+        <MappingFragment StoreEntitySet="ResourceTypeDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="TypeName" ColumnName="TypeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConfigDbSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MvcFrameForPorjectSqlModel.ConfigDb)">
+        <MappingFragment StoreEntitySet="ConfigDbSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Values" ColumnName="Values" />
+          <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+          <ScalarProperty Name="ModifyTime" ColumnName="ModifyTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

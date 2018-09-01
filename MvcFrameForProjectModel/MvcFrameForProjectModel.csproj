@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4E2A043A-C80D-44C0-B54F-692A3F6BA2A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MvcFrameForProjectModel</RootNamespace>
+    <AssemblyName>MvcFrameForProjectModel</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommentDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Constant\ConstantConfig.cs" />
+    <Compile Include="InformationDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InformationTypeDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MvcFrameForPorjectSqlModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcFrameForPorjectSqlModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MvcFrameForPorjectSqlModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MvcFrameForPorjectSqlModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MvcFrameForPorjectSqlModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PostInModels\RegisterModel.cs" />
+    <Compile Include="PostInModels\UserLoginInModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResourceTypeDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserClassDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsersDb.cs">
+      <DependentUpon>MvcFrameForPorjectSqlModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="MvcFrameForPorjectSqlModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MvcFrameForPorjectSqlModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MvcFrameForPorjectSqlModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MvcFrameForPorjectSqlModel.Context.cs</LastGenOutput>
+      <DependentUpon>MvcFrameForPorjectSqlModel.edmx</DependentUpon>
+    </None>
+    <None Include="MvcFrameForPorjectSqlModel.edmx.diagram">
+      <DependentUpon>MvcFrameForPorjectSqlModel.edmx</DependentUpon>
+    </None>
+    <None Include="MvcFrameForPorjectSqlModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>MvcFrameForPorjectSqlModel.cs</LastGenOutput>
+      <DependentUpon>MvcFrameForPorjectSqlModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DTO\" />
+    <Folder Include="LocalModels\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MvcFrameForPorjectSqlModel.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

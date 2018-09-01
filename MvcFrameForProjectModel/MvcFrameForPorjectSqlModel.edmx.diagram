@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fe373ca30c8643b5b3789b44be129a16" Name="Diagram1" >
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.UsersDb" Width="1.5" PointX="0.75" PointY="0.5" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.UserClassDb" Width="1.5" PointX="3.625" PointY="0.5" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.ResourceDb" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.InformationDb" Width="1.5" PointX="0.75" PointY="3.25" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.CommentDb" Width="1.5" PointX="3.625" PointY="2.75" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.InformationTypeDb" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.ResourceTypeDb" Width="1.5" PointX="6" PointY="6.875" />
+        <EntityTypeShape EntityType="MvcFrameForPorjectSqlModel.ConfigDb" Width="1.5" PointX="7.25" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
